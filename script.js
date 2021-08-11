@@ -71,9 +71,6 @@ const sync = (destination) => {
                 {
                     headers: {
                         Authorization: `Bearer ${GistToken}`,
-                        "Cache-Control": "no-cache",
-                        Pragma: "no-cache",
-                        Expires: "0",
                     },
                 }
             )
@@ -131,10 +128,8 @@ const register = () => {
 const getData = () => {
     axios
         .get(`${url}${GistId}`, {
-            headers: {
-                "Cache-Control": "no-cache",
-                Pragma: "no-cache",
-                Expires: "0",
+            params: {
+                t: new Date().getTime(),
             },
         })
         .then((res) => {
