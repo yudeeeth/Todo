@@ -31,15 +31,10 @@ window.addEventListener("load", (event) => {
     if (localStorage.getItem("todoObj") == null) {
         //setlastUpdate in registerItelf
         document.getElementById("registerModal").style.visibility = "visible";
-    } else if (updateNow()) {
-        GistId = localStorage.getItem("GistId");
-        GistToken = localStorage.getItem("GistToken");
-        getData();
     } else {
         GistId = localStorage.getItem("GistId");
         GistToken = localStorage.getItem("GistToken");
-        todoObj = JSON.parse(localStorage.getItem("todoObj"));
-        renderTodo();
+        getData();
     }
 });
 
@@ -142,14 +137,6 @@ const getData = () => {
         .catch((err) => {
             console.error(err);
         });
-};
-//will check if an update is currently needed for the obj based on last time updated
-const updateNow = () => {
-    let currTime = new Date().getTime();
-    if (currTime - parseInt(localStorage.getItem("lastSync")) < 30000) {
-        return false;
-    }
-    return true;
 };
 //adds the task to obj and syncs with remote and local
 const addToObj = () => {
