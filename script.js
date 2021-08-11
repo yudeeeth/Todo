@@ -56,11 +56,11 @@ const sync = (destination) => {
         localStorage.setItem("todoObj", `${JSON.stringify(todoObj)}`);
         // localStorage.setItem("lastSync", `${new Date().getTime()}`);
     } else {
-        let Filename = localStorage.getItem('filename');
+        let Filename = localStorage.getItem("filename");
         console.debug(Filename);
         axios
             .patch(
-                `${url}${GistId}/raw`,
+                `${url}${GistId}`,
                 {
                     files: {
                         [Filename]: {
@@ -68,7 +68,14 @@ const sync = (destination) => {
                         },
                     },
                 },
-                {headers: { "Authorization": `Bearer ${GistToken}` }}
+                {
+                    headers: {
+                        Authorization: `Bearer ${GistToken}`,
+                        "Cache-Control": "no-cache",
+                        Pragma: "no-cache",
+                        Expires: "0",
+                    },
+                }
             )
             .then((res) => {
                 console.debug(res);
@@ -123,12 +130,18 @@ const register = () => {
 //gets data from remote and syncs with local
 const getData = () => {
     axios
-        .get(`${url}${GistId}/raw`)
+        .get(`${url}${GistId}`, {
+            headers: {
+                "Cache-Control": "no-cache",
+                Pragma: "no-cache",
+                Expires: "0",
+            },
+        })
         .then((res) => {
             console.debug(res);
             //assing res to todoObj
             let Filename = Object.keys(res.data.files)[0];
-            localStorage.setItem('filename',Filename);
+            localStorage.setItem("filename", Filename);
             todoObj = JSON.parse(res.data.files[Filename].content);
             sync("local");
             renderTodo();
