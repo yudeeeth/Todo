@@ -49,7 +49,7 @@ const hideModal = (id) => {
         document.getElementById("registerGistToken").value = "";
     }
 };
-//sync will update screen always
+//sync will update screen alwaystodoObj") == null
 const sync = (destination) => {
     //debug
     if (destination == "local") {
@@ -98,11 +98,11 @@ const renderTodo = () => {
 };
 //basically change tag to deleted
 const deleteTodo = (id) => {
-    if(todoObj[id].tag=="deleted"){
-        delete todoObj[id];
-    }
-    else
-        todoObj[id].tag = "deleted";
+    // if(todoObj[id].tag=="deleted"){
+    //     delete todoObj[id];
+    // }
+    // else
+    todoObj[id].tag = "deleted";
     sync("local");
     sync("remote");
     renderTodo();
@@ -130,7 +130,6 @@ const getData = () => {
             let Filename = Object.keys(res.data.files)[0];
             localStorage.setItem('filename',Filename);
             todoObj = JSON.parse(res.data.files[Filename].content);
-            localStorage.setItem("lastSync", `${new Date().getTime()}`);
             sync("local");
             renderTodo();
         })
