@@ -91,11 +91,9 @@ body{
     display:flex;
     flex-direction: column;
 }
-html,body,main{
-    height:100%;
-}
 html{
     min-width: 10rem;
+    background-color: var(--nonThemesecondary);
 }
 /* height in html,body and main are 100% to strech them to bottom of screen */
 
