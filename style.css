@@ -1,8 +1,8 @@
 :root{
     font-size: 24px;
     font-family: 'Nunito', sans-serif;
-    --themePrimary: violet;
-    --themeSecondary: rgb(189, 110, 223);
+    --themePrimary: rgb(73, 168, 73);
+    --themeSecondary: #1f831f;
     --nonThemePrimary: white;
     --nonThemesecondary: rgb(219, 219, 219);
 }
