@@ -1,0 +1,87 @@
+:root{
+    font-size:24;
+}
+body{
+    margin:0;
+}
+header{
+    background-color: rgb(176, 127, 199);
+    display:flex;
+    align-items:centre;
+    justify-content: space-between;
+}
+
+div{
+    /* background-color: rgb(176, 127, 199); */
+    display:flex;
+    align-items:centre;
+}
+
+.button{
+    margin:1rem;
+    border:0;
+    border-radius: 1rem;
+    width:2rem;
+    height:4rem;
+    align-self: center;
+    background-color: rgb(176, 127, 199);
+}
+.button:hover{
+    background-color: rgb(139, 95, 160);
+}
+
+i{
+    scale:1.5;
+    border:none;
+}
+p,h1,h2{
+    padding-left:1rem;
+    align-self:center;
+}
+
+#addTodo{
+    margin:2rem;
+    position:absolute;
+    right:0;
+    bottom:0;
+    border:0;
+    border-radius: 2rem;
+    width:4rem;
+    height:4rem;
+    background-color: rgb(176, 127, 199);
+}
+#addTodo:hover{
+    background-color: rgb(193, 152, 212);
+}
+
+#modal,#register-modal{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin-bottom: 0;
+    background-color: rgba(0, 0, 0, 0.349);
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    visibility: hidden;
+    z-index:1;
+}
+
+#inmodel{
+    background-color: white;
+    border-radius: 1rem;
+    padding:1rem;
+}
+
+#createTask{
+    border:0px;
+    border-radius: 4px;
+    padding:8px;
+    background-color:rgb(176, 127, 199);
+}
+#createTask:hover{
+    background-color: rgb(193, 152, 212);
+}

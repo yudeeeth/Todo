@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Todo</title>
+</head>
+<body>
+    <header>
+        <h1>Todo</h1>
+        <div>
+            <p>Tag</p>
+            <button class="button"><i class="fas fa-ellipsis-v"></i></button>        
+        </div>
+    </header>
+    <main>
+    </main>
+    <button id="addTodo" onclick="callModal()"><i class="fas fa-plus"></i></button>
+    <!-- Modal -->
+    <div id ="modal">
+        <div id="inmodel">
+            <fieldset>
+                <legend>Add new Todo</legend>
+                <input type="text" id="title-new" placeholder="Title">
+                <button id="createTask" onclick="addtask()">Create!</button>
+            </fieldset>
+        </div>
+    </div>
+    <div id ="register-modal">
+        <div id="inmodel">
+            <fieldset>
+                <legend>Register</legend>
+                <input type="text" id="registerName" placeholder="Name">
+                <input type="text" id="registerGistToken" placeholder="Gist Token">
+                <input type="text" id="registerGistId" placeholder="Gist Id">
+                <button id="createTask" onclick="finishRegister()">Create!</button>
+            </fieldset>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
+</body>
+</html>
