@@ -60,7 +60,7 @@ const sync = (destination) => {
         console.debug(Filename);
         axios
             .patch(
-                `${url}${GistId}`,
+                `${url}${GistId}/raw`,
                 {
                     files: {
                         [Filename]: {
@@ -123,7 +123,7 @@ const register = () => {
 //gets data from remote and syncs with local
 const getData = () => {
     axios
-        .get(`${url}${GistId}`)
+        .get(`${url}${GistId}/raw`)
         .then((res) => {
             console.debug(res);
             //assing res to todoObj
