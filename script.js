@@ -131,6 +131,9 @@ const getData = () => {
             params: {
                 t: new Date().getTime(),
             },
+            headers:{
+                Authorization: `token ${GistToken}`
+            }
         })
         .then((res) => {
             console.debug(res);
